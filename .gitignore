@@ -1,0 +1,34 @@
+# env file
+.env
+todo.txt
+
+# node_modules
+node_modules
+
+# build folder
+build
+
+# coverage folder
+coverage
+
+# .env.local file
+.env.local
+
+# .env.development.local file
+.env.development.local
+
+# .env.test.local file
+.env.test.local
+
+# ide folder
+.idea
+.vscode
+
+# misc
+.DS_Store
+.envrc
+.env.local
+
+dump.rdb
+
+*.pdf
