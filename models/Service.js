@@ -10,7 +10,7 @@ const ServiceSchema = new mongoose.Schema({
   preparationTime: { type: Number, default: 0 },
   cleanupTime: { type: Number, default: 0 },
   category: { type: String },
-  appointments: [{ // Array to track appointment ids and their corresponding dates
+  appointments: [{
     appointmentDate: { type: Date, required: true },
     appointmentId: { type: mongoose.Schema.Types.ObjectId, ref: 'Appointment', required: true }
   }]

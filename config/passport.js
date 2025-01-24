@@ -19,7 +19,7 @@ passport.use(
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
-        let user = await User.findOne({ googleId: profile.id });
+        let user = await User.findOne({ email: profile.emails[0].value });
         if (!user) {
           user = await User.create({
             googleId: profile.id,
@@ -29,7 +29,7 @@ passport.use(
             role: "client",
           });
         }
-        
+
         // Generate JWT
         const token = jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: '1h' });
         await setExAsync(`auth_${user._id}`, 60 * 60, token);

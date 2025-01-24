@@ -15,7 +15,6 @@ const AppointmentSchema = new mongoose.Schema({
             message: 'Appointment date must be in the future.',
         },
     },
-    location: { type: String, required: true },
     status: {
         type: String,
         enum: ['pending', 'confirmed', 'rejected', 'cancelled'],
